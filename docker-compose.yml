@@ -1,0 +1,25 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: devops-mysql
+    environment:
+      MYSQL_DATABASE: devopsdb
+      MYSQL_USER: devops
+      MYSQL_PASSWORD: devops123
+      MYSQL_ROOT_PASSWORD: root123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  spring:
+    build: .
+    container_name: devops-spring
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
