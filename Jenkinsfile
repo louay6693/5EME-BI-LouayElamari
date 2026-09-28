@@ -30,6 +30,11 @@ pipeline {
                     }
                 }
             }
+            post {
+                always {
+                    junit allowEmptyResults: false, testResults: 'backend/target/surefire-reports/*.xml'
+                }
+            }
         }
 
         stage('Prepare .env') {
