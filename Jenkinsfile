@@ -49,7 +49,7 @@ pipeline {
                         printf "MYSQL_USER=devops\\n"                          >> .env
                         printf "MYSQL_PASSWORD=%s\\n" "$DB_PASS"               >> .env
                         printf "DOCKERHUB_USER=%s\\n" "$DH_USER"               >> .env
-                        printf "IMAGE_PREFIX=louayelamari-5eme-bi-gestionprojets\\n" >> .env
+                        printf "IMAGE_PREFIX=louayelamari-5bi-devops\\n" >> .env
                         printf "API_URL=http://192.168.33.10:8081\\n"          >> .env
                     '''
                 }
